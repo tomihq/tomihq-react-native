@@ -10,9 +10,10 @@ export const CounterScreen = () => {
         <TouchableOpacity
           onPress={() => setCounter(prev => prev - 1)}
           accessibilityLabel="Decrease Counter"
+          style={styles.fabLocationBL}
         >
-          <View style={styles.button}> 
-            <Text> Decrease Counter</Text> 
+          <View style={styles.fab}> 
+            <Text style={styles.fabText}>-1</Text> 
           </View>
         </TouchableOpacity>
         
@@ -20,9 +21,10 @@ export const CounterScreen = () => {
         <TouchableOpacity
           onPress={() => setCounter(prev => prev + 1)}
           accessibilityLabel="Increase Counter"
+          style={styles.fabLocationBR}
         >
-          <View style={styles.button}> 
-              <Text> Increase Counter </Text> 
+          <View style={styles.fab}> 
+              <Text style={styles.fabText}>+1</Text> 
           </View>
         </TouchableOpacity>
 
@@ -36,13 +38,32 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center'
   },
-  button: {
-    backgroundColor: 'blue',
-    borderRadius: 100
-  },
   title: {
-    textAlign: 'center', 
     fontSize: 35, 
+    textAlign: 'center', 
     top: -15
+  },
+  fabLocationBL: {
+    position: 'absolute',
+    bottom: 40,
+    left: 25
+  },
+  fabLocationBR: {
+    position: 'absolute',
+    bottom: 40,
+    right: 25
+  },
+  fab: {
+    backgroundColor: '#5856D6',
+    width: 60,
+    height: 60,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  fabText: {
+    color: 'white',
+    fontSize: 25,
+    fontWeight: 'bold'
   }
 })
