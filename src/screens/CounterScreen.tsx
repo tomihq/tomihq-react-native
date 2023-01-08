@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Text, View, TouchableOpacity, StyleSheet} from "react-native"
+import { Fab } from "../components";
 
 export const CounterScreen = () => {
   const [counter, setCounter] = useState<number>(10);
@@ -7,27 +8,19 @@ export const CounterScreen = () => {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>Counter: {counter} </Text>
-        <TouchableOpacity
+        <Fab
+          title={'-1'}
+          accessibilityLabel = 'Decrease Counter'
           onPress={() => setCounter(prev => prev - 1)}
-          accessibilityLabel="Decrease Counter"
-          style={styles.fabLocationBL}
-        >
-          <View style={styles.fab}> 
-            <Text style={styles.fabText}>-1</Text> 
-          </View>
-        </TouchableOpacity>
-        
+          position={'bl'}
+        /> 
 
-        <TouchableOpacity
+        <Fab
+          title={'+1'}
+          accessibilityLabel = {'Increase Counter'}
           onPress={() => setCounter(prev => prev + 1)}
-          accessibilityLabel="Increase Counter"
-          style={styles.fabLocationBR}
-        >
-          <View style={styles.fab}> 
-              <Text style={styles.fabText}>+1</Text> 
-          </View>
-        </TouchableOpacity>
-
+          position={'br'}
+        />
     </View>
   )
 }
@@ -43,27 +36,5 @@ const styles = StyleSheet.create({
     textAlign: 'center', 
     top: -15
   },
-  fabLocationBL: {
-    position: 'absolute',
-    bottom: 40,
-    left: 25
-  },
-  fabLocationBR: {
-    position: 'absolute',
-    bottom: 40,
-    right: 25
-  },
-  fab: {
-    backgroundColor: '#5856D6',
-    width: 60,
-    height: 60,
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  fabText: {
-    color: 'white',
-    fontSize: 25,
-    fontWeight: 'bold'
-  }
+ 
 })
