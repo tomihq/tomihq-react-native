@@ -1,7 +1,7 @@
-import { HelloWorldScreen } from "./src/screens"
+import { CounterScreen } from "./src/screens"
 
 export const App = () => {
   return (
-   <HelloWorldScreen/>
+   <CounterScreen/>
   )
 }
