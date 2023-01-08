@@ -1,9 +1,7 @@
-import { Text, View } from "react-native";
+import { HelloWorldScreen } from "./src/screens"
 
 export const App = () => {
   return (
-    <View>
-      <Text>Hello from React Native!</Text>
-    </View>
+   <HelloWorldScreen/>
   )
 }
