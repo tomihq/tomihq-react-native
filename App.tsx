@@ -5,6 +5,7 @@ import { PaperProvider } from 'react-native-paper'
 import IonIcon from 'react-native-vector-icons/Ionicons'
 import { DimensionScreen } from './src/presentation/screens/DimensionScreen'
 import { PositionScreen } from './src/presentation/screens/PositionScreen'
+import { FlexScreen } from './src/presentation/screens/FlexScreen'
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
    >
      <SafeAreaView style={{flex: 1}}>
       {/* <CounterM3Screen/> */}
-      <PositionScreen/>
+      <FlexScreen/>
     </SafeAreaView>
    </PaperProvider>
   )
