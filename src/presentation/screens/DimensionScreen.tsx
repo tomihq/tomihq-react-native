@@ -1,16 +1,19 @@
 import React from 'react'
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
 
-const { width, height } = Dimensions.get('window');
+// const { width, height } = Dimensions.get('window');
 
 export const DimensionScreen = () => {
+  const {width, height} = useWindowDimensions();
   return (
     <View>
         <View style={styles.container}>
-            <Text style={styles.purpleBox}> Hello World! </Text>
+            <View style={{
+                ...styles.purpleBox,
+                width: width * 0.5
+            }}/>
         </View>
-
-        <Text>w: {width}, h: {height}</Text>
+        <Text style={styles.title}>w: {width}, h: {height}</Text>
     </View>
    
   )
@@ -27,5 +30,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#5856D6',
         height: '50%',
         width: '50%'
+    },
+    title: {
+        fontSize: 30,
+        textAlign: 'center'
     }
 });
